@@ -1,15 +1,29 @@
-import Button from "./components/ui/Button";
+import { useState } from "react";
 
 export default function App() {
-  const handler = (message: string) => {
-    alert(message);
+  const [count, setCount] = useState(0);
+  const handleCountSet = (operation: string) => {
+    switch (operation) {
+      case "+":
+        setCount((count) => count + 1);
+        break;
+      case "-":
+        setCount((count) => count - 1);
+        break;
+      case "reset":
+        setCount(0);
+        break;
+      default:
+        break;
+    }
   };
 
   return (
     <>
-      <Button message="ok!" onClick={handler}>
-        <span>Click</span>
-      </Button>
+      <h1>Count: {count}</h1>
+      <button onClick={() => handleCountSet("+")}>Increment</button>
+      <button onClick={() => handleCountSet("-")}>Decrement</button>
+      <button onClick={() => handleCountSet("reset")}>Reset</button>
     </>
   );
 }
