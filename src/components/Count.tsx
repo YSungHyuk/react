@@ -1,28 +1,15 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import CountButton from "./CountButton";
 import CountDisplay from "./CountDisplay";
+import counterReducer from "../reducer/counterResucer";
 
 export default function Count() {
-  const [count, setCount] = useState<number>(0);
-
-  const handleCountSet = (action: "Increment" | "Decrement" | "Reset") => {
-    switch (action) {
-      case "Increment":
-        setCount(count + 1);
-        break;
-      case "Decrement":
-        setCount(count - 1);
-        break;
-      case "Reset":
-        setCount(0);
-        break;
-    }
-  };
+  const [count, countDispatch] = useReducer(counterReducer, 0);
 
   return (
     <>
       <CountDisplay count={count} />
-      <CountButton handleCountSet={handleCountSet} />
+      <CountButton countDispatch={countDispatch} />
     </>
   );
 }
