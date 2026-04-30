@@ -1,8 +1,9 @@
-import LoginPanel from "./components/LoginPanel";
+import Notification from "./components/Notification";
+
 export default function App() {
   return (
     <>
-      <LoginPanel />
+      <Notification />
     </>
   );
 }
