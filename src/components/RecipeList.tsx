@@ -1,48 +1,23 @@
 import { useState } from "react";
 import Recipe from "./Recipe";
+import { initialRecipes } from "../data/initialData";
 
 export default function RecipeList() {
-  const [recipe, setRecipe] = useState([
-    {
-      id: "greek-salad",
-      name: "Greek Salad",
-      ingredients: ["tomatoes", "cucumber", "onion", "olives", "feta"],
-    },
-    {
-      id: "hawaiian-pizza",
-      name: "Hawaiian Pizza",
-      ingredients: [
-        "pizza crust",
-        "pizza sauce",
-        "mozzarella",
-        "ham",
-        "pineapple",
-      ],
-    },
-    {
-      id: "hummus",
-      name: "Hummus",
-      ingredients: [
-        "chickpeas",
-        "olive oil",
-        "garlic cloves",
-        "lemon",
-        "tahini",
-      ],
-    },
-  ]);
+  const [recipes, setRecipes] = useState(initialRecipes);
 
   const handleDelete = (id: string) => {
-    setRecipe((recipe) => {
-      return recipe.filter((recipe) => recipe.id !== id);
+    setRecipes((recipes) => {
+      return recipes.filter((recipes) => recipes.id !== id);
     });
   };
 
   return (
     <>
       <h1>Recipes</h1>
-      {recipe.map((item) => {
-        return <Recipe recipe={item} handleDelete={handleDelete} />;
+      {recipes.map((recipe) => {
+        return (
+          <Recipe key={recipe.id} {...recipe} handleDelete={handleDelete} />
+        );
       })}
     </>
   );

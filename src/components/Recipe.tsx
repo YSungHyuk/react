@@ -2,24 +2,24 @@ type RecipeType = {
   id: string;
   name: string;
   ingredients: string[];
-};
-
-type RecipeProps = {
-  recipe: RecipeType;
   handleDelete: () => void;
 };
 
-export default function Recipe({ recipe, handleDelete }: RecipeProps) {
-  console.log(recipe);
+export default function Recipe({
+  id,
+  name,
+  ingredients,
+  handleDelete,
+}: RecipeType) {
   return (
     <>
-      <div key={recipe.id}>
-        <b>{recipe.name}</b>
-        {recipe.ingredients.map((ingredient) => {
-          return <div>{ingredient}</div>;
+      <h3>{name}</h3>
+      <ul>
+        {ingredients.map((ingredient) => {
+          return <li key={ingredient}>{ingredient}</li>;
         })}
-        <div onClick={() => handleDelete(recipe.id)}>[삭제]</div>
-      </div>
+      </ul>
+      <button onClick={() => handleDelete(id)}>[삭제]</button>
     </>
   );
 }
