@@ -21,7 +21,7 @@ const Title = styled.h1<{ $color: string; $decoration: string }>`
 `;
 
 const BigTitle = styled(Title)`
-  font-size: 50px;
+  font-size: ${(props) => props.theme.fontSizes.large};
 `;
 
 const Wrapper = styled.section`
@@ -30,7 +30,7 @@ const Wrapper = styled.section`
 `;
 
 const BlueBorderWrapper = styled(Wrapper)<{ $shadow: boolean }>`
-  border-color: blue;
+  border-color: ${(props) => props.theme.colors.primary};
   ${(props) => props.$shadow && boxShadowMixin};
 `;
 
@@ -38,7 +38,7 @@ export default function App() {
   return (
     <>
       <BlueBorderWrapper $shadow={true}>
-        <Title $color="#ff0000" $decoration="line-through" as="p">
+        <Title $color="#00ff00" $decoration="line-through" as="p">
           App Component
         </Title>
         <BigTitle $color="#0000ff" $decoration="underline">
