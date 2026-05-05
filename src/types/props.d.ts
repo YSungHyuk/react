@@ -6,3 +6,10 @@ type PrintValueProps = {
   objectValue: { name: string; age: number };
   handleClick: () => void;
 };
+
+type ButtonGroupProps = {
+  id: number;
+  label: string;
+  icon: string;
+  isDisabled: boolean;
+};

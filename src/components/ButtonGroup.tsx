@@ -4,12 +4,7 @@ import classnames from "classnames/bind";
 export default function ButtonGroup({
   initialButtons,
 }: {
-  initialButtons: {
-    id: number;
-    label: string;
-    icon: string;
-    isDisabled: boolean;
-  }[];
+  initialButtons: ButtonGroupProps[];
 }) {
   const cx = classnames.bind(styles);
   const [active, setActive] = useState<number[]>([]);
