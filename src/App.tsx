@@ -5,19 +5,30 @@ const Title = styled.h1<{ $color: string; $decoration: string }>`
   text-decoration: ${(props) => props.$decoration};
 `;
 
+const BigTitle = styled(Title)`
+  font-size: 50px;
+`;
+
 const Wrapper = styled.section`
   padding: 2rem;
   border: 1px solid red;
 `;
 
+const BlueBorderWrapper = styled(Wrapper)`
+  border-color: blue;
+`;
+
 export default function App() {
   return (
     <>
-      <Wrapper>
-        <Title $color="#0000ff" $decoration="underline">
+      <BlueBorderWrapper>
+        <Title $color="#ff0000" $decoration="line-through">
           App Component
         </Title>
-      </Wrapper>
+        <BigTitle $color="#0000ff" $decoration="underline">
+          App Component
+        </BigTitle>
+      </BlueBorderWrapper>
     </>
   );
 }
