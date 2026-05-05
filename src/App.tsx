@@ -1,8 +1,23 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
+
+const boxShadowMixin = css`
+  margin: 20px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const Title = styled.h1<{ $color: string; $decoration: string }>`
   color: ${(props) => props.$color};
   text-decoration: ${(props) => props.$decoration};
+  animation: ${fadeIn} 2s ease-in;
 `;
 
 const BigTitle = styled(Title)`
@@ -14,15 +29,16 @@ const Wrapper = styled.section`
   border: 1px solid red;
 `;
 
-const BlueBorderWrapper = styled(Wrapper)`
+const BlueBorderWrapper = styled(Wrapper)<{ $shadow: boolean }>`
   border-color: blue;
+  ${(props) => props.$shadow && boxShadowMixin};
 `;
 
 export default function App() {
   return (
     <>
-      <BlueBorderWrapper>
-        <Title $color="#ff0000" $decoration="line-through">
+      <BlueBorderWrapper $shadow={true}>
+        <Title $color="#ff0000" $decoration="line-through" as="p">
           App Component
         </Title>
         <BigTitle $color="#0000ff" $decoration="underline">
