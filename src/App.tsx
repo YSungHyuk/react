@@ -1,7 +1,12 @@
 export default function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">App Component</h1>
+      <div className="flex flex-col items-center justify-center min-h-screen space-y-4">
+        <button className="button">global</button>
+        <button className="bg-green-500 text-white py-3 px-5 rounded border-none cursor-pointer transition-colors duration-300 hover:bg-green-600">
+          tailwind
+        </button>
+      </div>
     </>
   );
 }
