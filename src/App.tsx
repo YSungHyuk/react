@@ -1,9 +1,7 @@
-import TrafficLight from "./components/TrafficLight";
-
 export default function App() {
   return (
     <>
-      <TrafficLight />
+      <h1 className="text-3xl font-bold underline">App Component</h1>
     </>
   );
 }
