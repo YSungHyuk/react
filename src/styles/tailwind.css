@@ -9,52 +9,13 @@
   }
 
   body {
-    @apply bg-[#1f1f1f] flex justify-center items-center h-screen;
+    @apply bg-[#ccc] flex justify-center items-center h-screen;
   }
 }
 
 /* Tailwind spacing: 1 = 0.25rem, 기본 1rem = 16px, 16px * 0.25 = 4px */
 @layer components {
-  .calculator {
-    @apply w-[282px] border border-[#333] bg-[#ccc] p-[4px];
-  }
-
-  .calc-form {
-    @apply grid grid-cols-[repeat(4,65px)] auto-rows-[65px] gap-[4px];
-  }
-
-  .calc-btn {
-    @apply calc-btn cursor-pointer border border-[#333] text-[18px] hover:shadow-[1px_1px_2px_#333];
-  }
-
-  .calc-num {
-    @apply calc-btn bg-[#f0f0f0];
-  }
-
-  .calc-output {
-    @apply calc-btn col-span-4 border border-[#333] bg-white px-[10px] text-right text-[18px];
-  }
-
-  .calc-clear {
-    @apply calc-btn col-span-3 bg-[#ff0000];
-  }
-
-  .calc-operator {
-    @apply calc-btn bg-[#ffa500];
-  }
-
-  .calc-dot {
-    @apply calc-btn bg-[#008000];
-  }
-
-  .calc-result {
-    @apply calc-btn col-span-2;
-  }
 }
 
 @layer utilities {
-}
-
-@utility calc-btn {
-  @apply cursor-pointer border border-[#333] text-[18px] hover:shadow-[1px_1px_2px_#333];
 }
