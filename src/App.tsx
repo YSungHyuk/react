@@ -1,9 +1,7 @@
-import LampComponent from "./components/LampComponent";
-
 export default function App() {
   return (
     <>
-      <LampComponent />
+      <h1 className="nanum-pen">나눔 펜 스크립트</h1>
     </>
   );
 }

@@ -4,13 +4,13 @@
 }
 
 @layer base {
-  * {
+  /* * {
     @apply m-0 p-0 box-border;
   }
 
   body {
     @apply bg-[#ccc] flex justify-center items-center h-screen;
-  }
+  } */
 }
 
 /* Tailwind spacing: 1 = 0.25rem, 기본 1rem = 16px, 16px * 0.25 = 4px */
