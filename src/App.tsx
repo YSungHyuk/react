@@ -1,15 +1,9 @@
-import CheckBox from "./components/controlled/Checkbox";
-import Input from "./components/controlled/Input";
-import Radio from "./components/controlled/Radio";
-import Textarea from "./components/controlled/Textarea";
+import UserInfoForm from "./components/UserInfoForm";
 
 export default function App() {
   return (
     <>
-      {/* <Input /> */}
-      {/* <CheckBox /> */}
-      {/* <Radio /> */}
-      <Textarea />
+      <UserInfoForm />
     </>
   );
 }
